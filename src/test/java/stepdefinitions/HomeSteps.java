@@ -74,6 +74,7 @@ public class HomeSteps {
 
         if (driver != null) {
             driver.quit();
+            System.out.println("testing");
         }
     }
 
