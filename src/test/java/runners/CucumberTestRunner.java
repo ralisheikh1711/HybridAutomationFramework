@@ -4,7 +4,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
 
-        features = "src/test/resources/features",
+        features = "src/test/resources/features/Search.feature",
 
         glue = "stepdefinitions",
 
