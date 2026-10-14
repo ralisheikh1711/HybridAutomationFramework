@@ -1,26 +1,31 @@
 package hooks;
-import io.cucumber.java.After;
+
 import io.cucumber.java.Before;
+import io.cucumber.java.After;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 public class Hooks {
 
-        public static WebDriver driver;
+    private static WebDriver driver;
 
-        @Before
-        public void setUp() {
+    @Before
+    public void setUp() {
+        getDriver();
+    }
 
+    public static synchronized WebDriver getDriver() {
+        if (driver == null) {
             driver = new ChromeDriver();
-
-            driver.manage().window().maximize();
-
         }
+        return driver;
+    }
 
-        @After
-        public void tearDown() {
-
-            if (driver != null) {
-                driver.quit();
-            }
+    @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
         }
     }
+}
