@@ -17,6 +17,8 @@ public class Hooks {
     public static synchronized WebDriver getDriver() {
         if (driver == null) {
             driver = new ChromeDriver();
+            driver.get("https://demo.competethemes.com/");
+
         }
         return driver;
     }
