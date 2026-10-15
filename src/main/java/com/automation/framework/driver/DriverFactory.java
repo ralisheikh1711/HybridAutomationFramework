@@ -40,6 +40,7 @@ public final class DriverFactory {
 
         options.addArguments("--start-maximized");
 
+
         return new ChromeDriver(options);
     }
 
